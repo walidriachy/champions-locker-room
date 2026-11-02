@@ -2,6 +2,8 @@
 
 An interactive 3D tribute site for a cup-winning football squad: walk a locker room, open each player's locker, take shirts down from a rail and read the squad sheet. It runs in the browser with three.js and has no build step.
 
+**Live:** https://walidriachy.github.io/champions-locker-room/
+
 Everything here is placeholder content made for this project: the brand (LOKER), the 23 fictional players, the posters, the trophy and the copy. It's an unofficial fan tribute, not affiliated with any team, federation or competition. Swap in your own squad and art to make it yours.
 
 ## Pages
@@ -25,7 +27,7 @@ python3 serve.py
 
 Then open http://localhost:5178. `serve.py` is a plain static server that turns off browser caching so edits show on reload. Any static server pointed at `site/` works too.
 
-To publish it, upload the `site/` folder to any static host (GitHub Pages, Netlify, Cloudflare Pages…).
+Every push to `main` republishes `site/` to GitHub Pages through `.github/workflows/pages.yml`. The `site/` folder also works as-is on any other static host (Netlify, Cloudflare Pages…).
 
 ## Make it yours
 
