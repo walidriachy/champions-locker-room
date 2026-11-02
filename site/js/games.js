@@ -1,5 +1,5 @@
 // Mini-games and the shirt maker: penalty, foosball, the final replay, your shirt.
-import { RUN, SQUAD } from './data.js';
+import { BRAND, RUN, SQUAD } from './data.js';
 import { makeJersey, fontsReady, roundRect } from './art.js';
 import { $, $$, h, clamp } from './ui.js';
 import { sound } from './sound.js';
@@ -75,7 +75,7 @@ async function saveStory(f) {
   x.fillStyle = '#a69a8b'; x.font = '500 30px "Geist Mono", monospace'; x.textAlign = 'center'; x.fillText('I HUNG MY SHIRT IN THE', 540, 260);
   x.fillStyle = '#f6dc93'; x.font = '84px Boldonse, sans-serif'; x.fillText('CHAMPIONS’', 540, 380); x.fillText('ROOM', 540, 490);
   x.drawImage(makeJersey({ name: f.name, number: f.number, kit: 'fan', side: 'back', W: 820, H: 900 }), 130, 600);
-  x.fillStyle = '#a69a8b'; x.font = '500 28px "Geist Mono", monospace'; x.fillText('GARUDA 2026 · THE LOCKER ROOM', 540, 1720);
+  x.fillStyle = '#a69a8b'; x.font = '500 28px "Geist Mono", monospace'; x.fillText(`${BRAND.event} · THE LOCKER ROOM`, 540, 1720);
   const a = document.createElement('a'); a.download = `my-shirt-${f.number}.png`; a.href = c.toDataURL('image/png'); a.click();
 }
 

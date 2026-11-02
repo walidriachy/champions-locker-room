@@ -1,7 +1,7 @@
 // Home: one scroll-driven three.js scene. Posters move between five layouts:
 // cloud (hero) → ring → spiral (with dial) → wall (drag) → out, then the cup's locker finale.
 import { THREE, makeRenderer, envMap, canvasTex, makeTrophy, makeLocker } from './kit3d.js';
-import { POSTERS } from './data.js';
+import { BRAND, POSTERS } from './data.js';
 import { fontsReady, blurred, jerseyIcon, MARK_SVG, rng } from './art.js';
 import { $, $$, h, clamp, lerp, isTouch, chromeText, mountChrome, makeDetail, posterCanvas, goTo, yieldToBrowser } from './ui.js';
 import { sound } from './sound.js';
@@ -21,7 +21,8 @@ $$('[data-enter]').forEach((b) => (b.onclick = () => goTo('lockers.html', 'The l
 
 // ---------- DOM titles ----------
 const word = (txt, el) => { [...txt].forEach((c, i) => { const s = h(`<span class="ht-c">${chromeText(c)}</span>`); s.style.transitionDelay = 0.15 + i * 0.06 + 's'; el.append(s); }); };
-word('GARUDA', $('.ht-l')); word('2026', $('.ht-r'));
+const [evL, evR] = BRAND.event.split(' ');
+word(evL, $('.ht-l')); word(evR, $('.ht-r'));
 const ringWord = 'INKED IN GLORY';
 const rtH = $('.rt-h');
 [...ringWord].forEach((c, j) => {
