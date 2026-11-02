@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Garuda 2026 · The Champions' Locker Room</title>
+  <meta name="description" content="Walk the row, open a locker, see each player's shirt and poster.">
+  <meta name="theme-color" content="#0a0806">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&family=Caveat:wght@700&family=Geist:wght@400;500;600;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="stylesheet" href="css/room.css">
+  <link rel="stylesheet" href="css/games.css">
+  <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body class="room lockers">
+  <h1 class="sr-only">Garuda 2026: the champions' locker room</h1>
+  <canvas id="gl" aria-hidden="true"></canvas>
+
+  <p class="hint room-hint">Drag to walk along the lockers · tap a door to open it</p>
+  <div class="label" id="label"><h2><b></b><span></span></h2><p class="k"></p></div>
+
+  <div class="look" id="look" aria-hidden="true"><i></i><button class="pill look-btn" type="button"><span class="dot"></span>Look closer</button></div>
+
+  <nav class="strip" id="strip" aria-label="Lockers">
+    <button class="round st-prev" aria-label="Previous locker"><span class="ms">chevron_left</span></button>
+    <div class="st-win"><div class="st-track"></div></div>
+    <button class="round st-next" aria-label="Next locker"><span class="ms">chevron_right</span></button>
+  </nav>
+
+  <div class="dock">
+    <button class="round snd" type="button" aria-label="Sound"><span class="ms">volume_off</span></button>
+    <button class="round amb" id="ambBtn" type="button" aria-label="Day or night"><span class="ms">light_mode</span></button>
+  </div>
+
+  <a class="xcard" id="xlink" href="rail.html">
+    <span class="k">Next door</span><span class="k">23 shirts up close</span>
+    <span class="xc-box"><canvas width="224" height="164"></canvas><span><b><span class="ms">checkroom</span> The rail</b><span class="ms">arrow_outward</span></span></span>
+  </a>
+
+  <div class="fanchip" id="fanChip" hidden><span class="ms">apparel</span><span class="t">Your shirt is in the room</span><button type="button" data-go-fan>Find it</button></div>
+
+  <script type="module" src="js/lockers.js"></script>
+</body>
+</html>

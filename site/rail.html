@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Garuda 2026 · The Champions' Rail</title>
+  <meta name="description" content="All 23 shirts on one rail. Filter by position, take one down, read the squad sheet.">
+  <meta name="theme-color" content="#0a0806">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&family=Caveat:wght@700&family=Geist:wght@400;500;600;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/room.css">
+  <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body class="room rail">
+  <h1 class="sr-only">Garuda 2026: the champions' rail</h1>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="groups" id="groups" aria-hidden="true"></div>
+  <div class="tip" id="tip" aria-hidden="true"><div><b></b><small></small></div></div>
+  <p class="hint room-hint rail-hint">Hover a shirt · drag to slide the rail · click to take it down</p>
+
+  <aside class="sheet" id="sheet" aria-label="Squad sheet" aria-hidden="true">
+    <div class="sh-top"><span>Squad sheet</span><span class="chip">Cup 2026 champions</span><span class="ix"></span></div>
+    <div class="sh-scroll">
+      <div class="sh-id"><span class="sh-flag"></span><span class="sh-pos"></span><span class="sh-no"></span><span class="sh-nm"></span></div>
+      <div class="sh-rows"></div>
+      <div class="sh-fig"><p class="k"><b>Fig. 1</b> &nbsp;Cup 2026, match by match</p>
+        <div class="sh-axis"><span></span><div><span>0’</span><span>45’</span><span>90’</span><span>120’</span></div></div>
+        <div class="sh-ms"></div></div>
+    </div>
+    <p class="sh-src">Placeholder data · edit js/data.js with your own squad</p>
+    <div class="sh-bot"><button class="btn sh-back"><span>Back to the rail</span></button><button class="round sh-prev" aria-label="Previous shirt"><span class="ms">chevron_left</span></button><button class="round sh-next" aria-label="Next shirt"><span class="ms">chevron_right</span></button></div>
+  </aside>
+
+  <div class="dock"><button class="round snd" type="button" aria-label="Sound"><span class="ms">volume_off</span></button></div>
+
+  <a class="xcard" id="xlink" href="lockers.html">
+    <span class="k">Next door</span><span class="k">26 lockers to open</span>
+    <span class="xc-box"><canvas width="224" height="164"></canvas><span><b><span class="ms">door_front</span> The lockers</b><span class="ms">arrow_outward</span></span></span>
+  </a>
+
+  <script type="module" src="js/rail.js"></script>
+</body>
+</html>

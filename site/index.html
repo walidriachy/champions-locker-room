@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Garuda 2026 · The Locker Room</title>
+  <meta name="description" content="A champions' tribute in 23 shirts, 24 posters and one trophy.">
+  <meta name="theme-color" content="#0a0806">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&family=Caveat:wght@700&family=Geist:wght@400;500;600;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/detail.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body class="home">
+  <h1 class="sr-only">Garuda 2026: the champions' locker room</h1>
+
+  <div class="loader" aria-hidden="true">
+    <div class="ld-mark"></div>
+    <span class="k">Hanging the posters</span>
+    <i><b></b></i>
+  </div>
+
+  <div class="glow" aria-hidden="true"></div>
+  <canvas id="gl" aria-hidden="true"></canvas>
+
+  <!-- hero title -->
+  <div class="hero-t" aria-hidden="true">
+    <p class="ht-k"><i></i><span>The Locker Room</span><i></i></p>
+    <p class="ht-h"><span class="ht-w ht-l"></span><span class="ht-w ht-r"></span></p>
+  </div>
+
+  <!-- ring title: letters set on a cylinder -->
+  <div class="ring-t" aria-hidden="true">
+    <p class="ht-k rt-k"><i></i><span>24 illustrators · one squad</span><i></i></p>
+    <div class="rt-stage"><p class="rt-h"></p></div>
+  </div>
+
+  <!-- spiral dial -->
+  <div class="sp" aria-hidden="true">
+    <div class="dial">
+      <div class="dial-rotor"></div>
+      <div class="dial-names"></div>
+      <i class="dial-index"></i>
+      <button class="dial-knob" type="button" aria-label="Open this poster"><canvas width="120" height="132"></canvas><span class="ms">open_in_full</span></button>
+    </div>
+    <p class="k sp-by"></p>
+  </div>
+
+  <div class="wcur" aria-hidden="true"><span>Drag</span></div>
+  <div id="turnhint" aria-hidden="true"><span class="th-pill"><i></i><span>Open</span></span></div>
+
+  <!-- finale -->
+  <div class="fin" aria-live="polite">
+    <div class="fin-words">
+      <p class="k fin-k"><i></i>Regional Cup 2026 · Champions</p>
+      <h2 class="fin-h">
+        <span class="mk"><span class="ln bf">The whistle went.</span><span class="ln af">Even the trophy</span></span>
+        <span class="mk"><span class="ln bf">The story <em>didn’t stop.</em></span><span class="ln af">has <em>a locker now.</em></span></span>
+      </h2>
+      <p class="fin-p">23 shirts, 24 posters and one trophy, kept in a room you can walk through. Open the doors, read the stories, see what the artists made.</p>
+      <div class="fin-cta"><button class="btn solid" data-enter><span>Enter the lockers</span><span class="ms">arrow_forward</span></button>
+        <button class="pill fin-open" type="button"><span class="ms">lock_open</span><span class="t">Open the cup’s locker</span></button></div>
+    </div>
+  </div>
+
+  <p class="hint home-hint"><i class="hint-cue" aria-hidden="true"></i>Scroll to continue</p>
+
+  <main><div class="scroller" aria-hidden="true"></div></main>
+
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

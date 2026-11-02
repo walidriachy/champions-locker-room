@@ -1,0 +1,6 @@
+# private planning notes and reference screenshots of other sites: never published
+replica/
+# local editor / assistant config
+.claude/
+.DS_Store
+__pycache__/

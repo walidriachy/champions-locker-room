@@ -1,0 +1,95 @@
+/* shared by The Lockers and The Rail */
+.room { overflow: hidden; height: 100vh; height: 100dvh; background: #0b0806; }
+.room #gl { position: fixed; inset: 0; width: 100vw; height: 100vh; touch-action: none; }
+.room .top .nav { gap: 8px; }
+/* in the rooms the big chrome title sits under the header bar, like a sign on the wall */
+.room .brand { position: fixed; top: 72px; left: 50%; transform: translateX(-50%); gap: 2px; }
+.room .brand .bk { font-size: 10.5px; }
+.room .brand .chrome { font-size: clamp(30px, 4.2vw, 52px); }
+.room-hint { bottom: 152px; }
+.room .label { bottom: 96px; }
+.room .label h2 { font-size: 21px; }
+
+.strip { position: fixed; left: 50%; bottom: 46px; transform: translateX(-50%); z-index: 16; display: flex; align-items: center; gap: 8px; padding: 6px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.strip .round { width: 38px; height: 38px; }
+.st-win { width: min(420px, 56vw); height: 38px; overflow: hidden; position: relative; -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent); mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent); }
+.st-track { position: absolute; left: 50%; top: 0; height: 100%; display: flex; align-items: center; transition: transform 0.55s var(--ease); }
+.st-track button { flex: none; width: 38px; height: 38px; border-radius: 50%; font-family: var(--f-mono); font-size: 12px; color: var(--muted); display: grid; place-items: center; transition: color 0.3s, background 0.3s, box-shadow 0.3s; }
+.st-track button:hover { color: var(--text); }
+.st-track button .ms { font-size: 18px; }
+.st-track button.on { color: var(--text); background: rgba(255, 240, 215, 0.08); box-shadow: inset 0 0 0 1.5px var(--gold); }
+.st-track button.cup .ms { color: var(--gold); }
+
+.dock { position: fixed; left: var(--pad); bottom: 50px; z-index: 16; display: flex; gap: 8px; }
+
+.look { position: fixed; left: 0; top: 0; z-index: 13; display: flex; align-items: center; pointer-events: none; opacity: 0; transition: opacity 0.3s; }
+.look.on { opacity: 1; }
+.look > i { width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.18); flex: none; }
+.look-btn { pointer-events: auto; margin-left: 12px; height: 34px; }
+.look-btn .dot { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--gold); display: grid; place-items: center; }
+.look-btn .dot::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+.look > i::after { content: ''; position: absolute; }
+
+.fanchip { position: fixed; left: 50%; top: 150px; transform: translateX(-50%); z-index: 16; display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 6px 0 14px; border-radius: 999px; border: 1px solid rgba(232, 192, 96, 0.5); background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); font-size: 13px; }
+.fanchip .ms { color: var(--gold); font-size: 18px; }
+.fanchip button { height: 28px; padding: 0 12px; border-radius: 999px; background: rgba(232, 192, 96, 0.16); color: var(--gold-2); font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; }
+
+/* rail page */
+.groups { position: fixed; inset: 0; z-index: 5; pointer-events: none; }
+.groups span { position: absolute; left: 0; top: 0; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 10px; transition: opacity 0.4s; }
+.groups span b { color: var(--gold); font-weight: 500; }
+.groups span::before, .groups span::after { content: ''; width: 34px; height: 1px; background: rgba(255, 240, 215, 0.25); }
+.tip { position: fixed; left: 0; top: 0; z-index: 14; pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+.tip.on { opacity: 1; }
+.tip div { transform: translate(-50%, calc(-100% - 14px)); padding: 8px 12px; border-radius: 10px; background: rgba(26, 20, 16, 0.92); border: 1px solid var(--line-2); white-space: nowrap; text-align: center; }
+.tip b { display: block; font-size: 14px; font-weight: 600; }
+.tip b em { font-style: normal; color: var(--gold); margin-right: 6px; }
+.tip small { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+
+.sheet { position: fixed; right: var(--pad); top: 132px; bottom: 50px; width: min(380px, calc(100vw - 2 * var(--pad))); z-index: 18; border-radius: 22px; border: 1px solid var(--line-2); background: rgba(24, 18, 14, 0.78); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); display: flex; flex-direction: column; transform: translateX(calc(100% + 40px)); transition: transform 0.6s var(--ease); }
+.sheet.open { transform: none; }
+.sh-top { display: flex; align-items: center; gap: 10px; padding: 16px 18px 12px; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); }
+.sh-top .chip { padding: 4px 9px; border-radius: 999px; border: 1px solid rgba(232, 192, 96, 0.6); color: var(--gold); font-size: 9px; }
+.sh-top .ix { margin-left: auto; color: var(--text); }
+.sh-scroll { overflow-y: auto; padding: 0 18px; flex: 1; }
+.sh-id { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; align-items: center; padding: 14px; border-radius: 14px; background: rgba(255, 240, 215, 0.04); border: 1px solid var(--line); }
+.sh-flag { width: 30px; height: 20px; border-radius: 2px; background: linear-gradient(#d4362a 50%, #f4ede4 50%); }
+.sh-pos { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.24em; color: var(--muted); text-transform: uppercase; }
+.sh-no { font-family: var(--f-num); font-size: 40px; line-height: 1; text-align: center; }
+.sh-nm { font-size: 22px; letter-spacing: -0.01em; }
+.sh-nm b { font-weight: 700; }
+.sh-rows { margin: 14px 0; }
+.sh-rows div { display: flex; align-items: baseline; gap: 8px; padding: 8px 0; font-size: 13.5px; }
+.sh-rows div span { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+.sh-rows div i { flex: 1; border-bottom: 1px dotted rgba(255, 240, 215, 0.2); transform: translateY(-3px); }
+.sh-rows div b { font-weight: 500; text-align: right; }
+.sh-fig { border-top: 1px solid var(--line); padding: 14px 0 6px; }
+.sh-fig .k { font-size: 10px; letter-spacing: 0.2em; }
+.sh-fig .k b { color: var(--gold); font-weight: 500; }
+.sh-axis { display: grid; grid-template-columns: 74px 1fr; margin: 10px 0 4px; font-family: var(--f-mono); font-size: 9.5px; color: var(--dim); }
+.sh-axis div { display: flex; justify-content: space-between; }
+.sh-m { display: grid; grid-template-columns: 74px 1fr; align-items: center; padding: 6px 0; }
+.sh-m p { margin: 0; font-family: var(--f-mono); font-size: 11px; color: var(--muted); line-height: 1.3; }
+.sh-m p b { color: var(--text); font-weight: 600; }
+.sh-m .bar { height: 6px; border-radius: 4px; background: rgba(255, 240, 215, 0.07); position: relative; }
+.sh-m .bar i { position: absolute; inset: 0 auto 0 0; border-radius: 4px; background: linear-gradient(90deg, var(--gold-d), var(--gold)); width: 0; transition: width 0.8s var(--ease); }
+.sh-m small { grid-column: 2; font-family: var(--f-mono); font-size: 10px; color: var(--dim); margin-top: 4px; }
+.sh-src { font-family: var(--f-mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--dim); line-height: 1.5; padding: 10px 18px; text-transform: uppercase; }
+.sh-bot { display: flex; gap: 8px; padding: 0 18px 16px; }
+.sh-bot .btn { flex: 1; }
+.sh-bot .round { width: 46px; height: 46px; }
+
+@media (max-width: 760px) {
+  .strip { bottom: 44px; }
+  .st-win { width: 52vw; }
+  .dock { bottom: 102px; flex-direction: column; }
+  .room .label { bottom: 98px; }
+  .room-hint { bottom: 160px; width: calc(100vw - 140px); }
+  .room .label { width: max-content; max-width: calc(100vw - 140px); }
+  /* phones: the rail filter leaves the crowded header for the empty bench area */
+  .rail .top .filt { position: fixed; left: 50%; bottom: 50px; transform: translateX(-50%); transition: opacity 0.3s; }
+  .rail.taken .top .filt { opacity: 0; pointer-events: none; }
+  .fanchip { top: 128px; white-space: nowrap; font-size: 12px; }
+  .room .top .seg button { padding: 0 9px; font-size: 9.5px; letter-spacing: 0.14em; }
+  .sheet { top: auto; height: 54vh; bottom: 40px; transform: translateY(calc(100% + 60px)); }
+}
